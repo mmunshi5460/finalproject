@@ -1,0 +1,32 @@
+<nav class="top_menu">
+  <ul>
+    <% if(typeof(userLoggedIn) !='undefined' && userLoggedIn){%>
+
+      <li>
+        <a href="/addNewPage">Add New Page</a>
+      </li>
+      <li>
+        <a href="/viewAllPages">Edit Pages</a>
+      </li>
+
+      <li>
+        <a href="/logout">Log Out</a>
+      </li>
+      <%}else{%>
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/about">About</a>
+        </li>
+        <li>
+          <a href="/contact">Contact</a>
+        </li>
+        <%if(typeof(posts) !='undefined'){ for(var post of posts){ %>
+          <li>
+            <a href="/views/<%= post._id%>"><%= post.title %></a>
+          </li>
+          <% } %>
+        <%}}%>
+  </ul>
+</nav>

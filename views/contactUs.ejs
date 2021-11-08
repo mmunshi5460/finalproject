@@ -1,0 +1,29 @@
+<%- include('layouts/header'); -%>
+<Body>
+    <%- include('layouts/nav'); -%>
+    <form method="POST" action="/contact">
+        <div class="formfield">
+            <label for="name">Name: </label>
+            <input type="text" name="name">
+            <div class="clear"></div>
+        </div>
+        <div class="formfield">
+            <label for="email">Email: </label>
+            <input type="text" name="email">
+            <div class="clear"></div>
+        </div>
+        <div class="formfield">
+            <input class="submit" type="submit" value="Submit">
+        </div>
+    </form>
+</Body>
+<% if(typeof errors !== 'undefined'){
+    for(var error of errors){
+        %>
+            <h3><%= error.msg %></h3>
+        <%
+    }
+}
+%>
+
+<%- include('layouts/footer'); -%>

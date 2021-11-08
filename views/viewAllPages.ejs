@@ -1,0 +1,36 @@
+<%- include('layouts/header'); -%>
+
+  <body>
+    <%- include('layouts/nav'); -%>
+      <section>
+        <table>
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Image</th>
+              <th>Text</th>
+              <th>Edit</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for(var post of posts){ %>
+              <tr>
+                <td>
+                  <%= post.title %>
+                </td>
+                <td>
+                  <%= post.image %>
+                </td>
+                <td>
+                  <%= post.content %>
+                </td>
+                <td><a href="/edit/<%= post._id%>">Edit</a></td>
+                <td><a href="/delete/<%= post._id%>">Delete</a></td>
+              </tr>
+              <% } %>
+          </tbody>
+        </table>
+      </section>
+  </body>
+  <%- include('layouts/footer'); -%>

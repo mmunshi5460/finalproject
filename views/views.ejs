@@ -1,0 +1,23 @@
+<%- include('layouts/header'); -%>
+<body>
+    <%- include('layouts/nav'); -%>
+    <section>
+            <h1 id="errors">
+                <%=
+                    page.title
+                %>
+            </h1> 
+            <%- page.content%>   
+                
+            <img src="/uploads/<%=page.image%>"/>
+    </section>
+</body>
+<%- include('layouts/footer'); -%>
+
+
+
+
+
+
+
+
