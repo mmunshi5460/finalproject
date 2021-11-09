@@ -11,6 +11,7 @@ const { check, validationResult, header } = require('express-validator');
 const { json } = require('body-parser');
 //get express session
 const session = require('express-session');
+const port = process.env.PORT || 8080;
 
 /****************************Database****************************/
 //MongoDB
@@ -310,7 +311,7 @@ myApp.post('/contactUs', [
 );
 
 // start the server and listen at a port
-myApp.listen(8080);
+myApp.listen(port);
 
 //tell everything was ok
 console.log('Everything executed fine.. website at port 8080....');
